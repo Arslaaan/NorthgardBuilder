@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "NgbConfig.h"
 
 class Buildings {
    public:
@@ -19,7 +20,7 @@ class Buildings {
     bool operator<(const Buildings& other) const;
 
    private:
-    Buildings(int lumberCost, int goldCost, int timeCost, int goldUpkeep, const std::string& name);
+    Buildings(const std::string& name);
         
     int lumberCost_;
     int goldCost_;
@@ -27,5 +28,3 @@ class Buildings {
     int goldUpkeep_; // gold upkeep for year
     std::string name_; // preferly for sorting
 };
-
-// todo init buildings

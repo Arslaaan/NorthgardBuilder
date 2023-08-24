@@ -2,7 +2,7 @@
 
 bool BuildAction::execute(
     GameState& gs, int currentTimeInSeconds,
-    std::map<int, std::vector<std::shared_ptr<Action>>>& consequences) const {
+    std::map<int, std::vector<std::shared_ptr<Action>>>& consequences) {
         //todo add tile size check
     if (gs.freeVillages == 0 || gs.gold - targetBuilding.getGoldCost() < 0 ||
         gs.lumber - targetBuilding.getLumberCost() < 0) {

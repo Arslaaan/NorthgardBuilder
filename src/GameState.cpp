@@ -3,6 +3,10 @@
 GameState::GameState() {
     freeVillages = NgbConfig::getInstance().getInt("startVillages");
     allVilages = freeVillages;
+    food = NgbConfig::getInstance().getDouble("startFood");
+    lumber = NgbConfig::getInstance().getDouble("startLumber");
+    gold = NgbConfig::getInstance().getDouble("startGold");    
+    maxVillages = NgbConfig::getInstance().getDouble("startMaxVillages");    
 }
 
 double GameState::calculateFoodIncome() {

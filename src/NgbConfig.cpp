@@ -10,14 +10,16 @@ NgbConfig::NgbConfig(std::string path) {
         version = std::stoi(line.substr(1));
         while (std::getline(in, line)) {
             std::istringstream iss(line);
-            
-            std::string key;
-            double value;
-            iss >> key;
-            iss >> value;
-            
-            configRawValues[key] = value;
-            std::cout << key << " " << value << std::endl;
+
+            if (iss) {
+                std::string key;
+                double value;
+                iss >> key;
+                iss >> value;
+
+                configRawValues[key] = value;
+                std::cout << key << " " << value << std::endl;
+            }
         }
         std::cout << "Configuration read completed" << std::endl;
     } else {

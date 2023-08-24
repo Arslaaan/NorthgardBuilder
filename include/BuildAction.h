@@ -12,7 +12,7 @@ class BuildAction : public Action {
 
     virtual bool execute(
         GameState& gs, int currentTimeInSeconds,
-        std::map<int, std::vector<std::shared_ptr<Action>>>& consequences) const override;
+        std::map<int, std::vector<std::shared_ptr<Action>>>& consequences) override;
 
     BuildAction(Buildings building, Strategy strategy);
 

@@ -12,18 +12,17 @@ bool Buildings::operator<(const Buildings& other) const {
     return name_ < other.name_;
 }
 
-Buildings::Buildings(int lumberCost, int goldCost, int timeCost, int goldUpkeep,
-                     const std::string& name)
-    : lumberCost_(lumberCost),
-      goldCost_(goldCost),
-      timeCost_(timeCost),
-      goldUpkeep_(goldUpkeep),
+Buildings::Buildings(const std::string& name)
+    : lumberCost_(NgbConfig::getInstance().getInt(name + "Lumber")),
+      goldCost_(NgbConfig::getInstance().getInt(name + "Gold")),
+      timeCost_(NgbConfig::getInstance().getInt(name + "Time")),
+      goldUpkeep_(NgbConfig::getInstance().getInt(name + "UpkeepD1")), // todo choose difficilty
       name_(name){};
 
-const Buildings Buildings::EXPLORATION = Buildings(0, 0, 5, 0, "EXPLORATION");
-const Buildings Buildings::LUMBER = Buildings(0, 0, 0, 0, "LUMBER");
-const Buildings Buildings::FISH = Buildings(0, 0, 0, 0, "FISH");
-const Buildings Buildings::BREWERY = Buildings(0, 0, 0, 0, "BREWERY");
-const Buildings Buildings::HIRD = Buildings(0, 0, 0, 0, "HIRD");
-const Buildings Buildings::SHIP = Buildings(0, 0, 0, 0, "SHIP");
-const Buildings Buildings::TOWNHALL = Buildings(0, 0, 0, 0, "TOWNHALL");
+const Buildings Buildings::EXPLORATION = Buildings("scoutCamp");
+const Buildings Buildings::LUMBER = Buildings("woodCutter");
+const Buildings Buildings::FISH = Buildings("fishingCabin");
+const Buildings Buildings::BREWERY = Buildings("brewery");
+const Buildings Buildings::HIRD = Buildings("herg");
+const Buildings Buildings::SHIP = Buildings("longshipDock");
+const Buildings Buildings::TOWNHALL = Buildings("townHall");

@@ -7,9 +7,13 @@ void BuildOrder::buildFree(Buildings building) {
         std::make_unique<BuildAction>(building, BuildAction::Strategy::FREE));
 }
 
+void BuildOrder::doNothing(int seconds) {
+    actions.push_back(std::make_unique<NothingAction>(seconds));
+}
+
 BuildOrder& BuildOrder::operator=(const BuildOrder& other) {
     for (const auto& p : other.actions) {
-        actions.push_back(p); // todo check
+        actions.push_back(p);  // todo check
     }
     return *this;
 }

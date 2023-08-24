@@ -3,7 +3,7 @@
 FinishBuilding::FinishBuilding(Buildings building) : targetBuilding(building) {}
 
 bool FinishBuilding::execute(GameState& gs, int currentTimeInSeconds,
-                             std::map<int, std::vector<std::shared_ptr<Action>>>& consequences) const {
+                             std::map<int, std::vector<std::shared_ptr<Action>>>& consequences) {
     if (gs.workingfreeVillages <= 0) {
         return false;
     }

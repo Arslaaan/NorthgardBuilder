@@ -1,15 +1,9 @@
 #include "Timeline.h"
 
 Timeline::Timeline(Clan clan) {
-    currentTimeInSeconds = 0;
+    currentTimeInSeconds = 0; // todo include currentTime to gs
     history.push_back(clan.getStartGameState());
 }
-
-// Timeline::Timeline(Clan clan, const BuildOrder& buildOrder)
-//     : buildOrder_(buildOrder) {
-//     currentTimeInSeconds = 0;
-//     history.push_back(clan.getStartGameState());
-// }
 
 void Timeline::calculate(int seconds) {
     while (currentTimeInSeconds < seconds) {

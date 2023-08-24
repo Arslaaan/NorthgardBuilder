@@ -7,12 +7,14 @@ struct GameState {
     double gold;
     double lumber;
 
-    double goldConsumption; // goldConsumption in second
+    double goldConsumption; // goldConsumption in second todo delete and do gold calculate like food
 
-    int freeVillages;
+    int freeVillages; // not working
     int allVilages;
-    int workingfreeVillages;
+    int workingfreeVillages; // free but building something
+    int maxVillages; // max current size of villages
     int ghosts;
+
 
     Tile gameMap; // todo add support several tiles
     // common state for all clans
